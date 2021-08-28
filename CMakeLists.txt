@@ -17,6 +17,10 @@ add_executable(wtm3
 	wtm3.cpp
 	)
 
+add_subdirectory(midifile)
+include_directories(midifile/include)
+target_link_libraries(wtm3 midifile)
+
 include(FindPkgConfig)
 
 pkg_check_modules(SNDFILE REQUIRED sndfile)
@@ -29,6 +33,5 @@ target_link_libraries(wtm3 ${FFTW3_LIBRARIES})
 target_include_directories(wtm3 PUBLIC ${FFTW3_INCLUDE_DIRS})
 target_compile_options(wtm3 PUBLIC ${FFTW3_CFLAGS_OTHER})
 
-target_link_libraries(wtm3 -lmidifile)
 
 target_compile_options(wtm3 PRIVATE "-Wall")

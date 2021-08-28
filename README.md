@@ -1,10 +1,26 @@
 wav-to-midi_a3
 --------------
-This program requires the .a and .h-files of https://github.com/craigsapp/midifile.git to be put in the appropriate directories under e.g. /usr/local.
+To clone it:
+
+```sh
+git clone https://github.com/folkertvanheusden/wav-to-midi.git
+cd wav-to-midi
+git submodule update --init --recursive
+```
+
+To build it:
+
+```sh
+mkdir build && cd build
+cmake ../
+make
+```
 
 To run it:
 
+```sh
 ./wtm3 -i test.wav -o test.mid -a
+```
 
 -a is optional but it gives the best results.
 

@@ -4,7 +4,7 @@
 #include <math.h>
 #include <sndfile.h>
 #include <stdio.h>
-#include <midilib/MidiFile.h>
+#include <MidiFile.h>
 
 #include "fft.h"
 
