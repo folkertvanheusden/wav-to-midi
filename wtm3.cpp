@@ -36,6 +36,18 @@ int main(int argc, char *argv[])
 		}
 	}
 
+	if (!in) {
+		fprintf(stderr, "no input-file selected\n\n");
+		usage();
+		return 1;
+	}
+
+	if (!out) {
+		fprintf(stderr, "no output-file selected\n\n");
+		usage();
+		return 1;
+	}
+
 	// read whole audio file in memory (should be mono)
 	SF_INFO sfinfo { 0 };
 	SNDFILE *fh = sf_open(in, SFM_READ, &sfinfo);
