@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	}
 
 	if (sfinfo.channels != 1) {
-		fprintf(stderr, "\"%u\": should be mono sample\n", sfinfo.channels);
+		fprintf(stderr, "should be mono sample. currently %u channels.\n", sfinfo.channels);
 		sf_close(fh);
 		return 1;
 	}
