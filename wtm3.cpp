@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	bool vel = false, pb = false;
 	int c = 0;
 
-	while((c = getopt(argc, argv, "i:o:ap")) != -1) {
+	while((c = getopt(argc, argv, "i:o:aph")) != -1) {
 		if (c == 'i')
 			in = optarg;
 		else if (c == 'o')
@@ -30,6 +30,10 @@ int main(int argc, char *argv[])
 			vel = true;
 		else if (c == 'p')
 			pb = true;
+		else if (c == 'h') {
+			usage();
+			return 0;
+		}
 		else {
 			usage();
 			return 1;
