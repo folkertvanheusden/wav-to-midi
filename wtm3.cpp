@@ -79,7 +79,8 @@ int main(int argc, char *argv[])
 	sf_close(fh);
 
 	// target sample rate is 520Hz: 31250 bits per second, 2 messages of 3 bytes (on + off), 10 bits per byte
-	double ratio = sfinfo.samplerate / 520.0;
+	double max_hz = 31250 / double(3 * 10 * 2);
+	double ratio = sfinfo.samplerate / max_hz;
 
 	// to midi
 	uint8_t pnote = 255;
@@ -89,7 +90,7 @@ int main(int argc, char *argv[])
 	smf::MidiFile outputfile;
         outputfile.absoluteTicks();
 
-	outputfile.setTicksPerQuarterNote(520 / 4);
+	outputfile.setTicksPerQuarterNote(max_hz / 4);
 
 	outputfile.addTimbre(0, 0, 0, 55 - 1);
 
