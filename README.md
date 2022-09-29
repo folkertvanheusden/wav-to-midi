@@ -10,6 +10,8 @@ git submodule update --init --recursive
 
 To build it:
 
+This program requires the libsndfile1-dev libfftw3-dev packages.
+
 ```sh
 mkdir build && cd build
 cmake ../
